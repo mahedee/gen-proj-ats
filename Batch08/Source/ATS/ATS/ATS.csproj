@@ -203,6 +203,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706281620111_InitialCreate.cs" />
+    <Compile Include="Migrations\201706281620111_InitialCreate.Designer.cs">
+      <DependentUpon>201706281620111_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706281754063_UserContextss.cs" />
+    <Compile Include="Migrations\201706281754063_UserContextss.Designer.cs">
+      <DependentUpon>201706281754063_UserContextss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -281,7 +290,14 @@
     <Content Include="Views\Organizations\Edit.cshtml" />
     <Content Include="Views\Organizations\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706281620111_InitialCreate.resx">
+      <DependentUpon>201706281620111_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706281754063_UserContextss.resx">
+      <DependentUpon>201706281754063_UserContextss.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

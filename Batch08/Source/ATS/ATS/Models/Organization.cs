@@ -10,6 +10,7 @@ namespace ATS.Models
     {
 
         [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
@@ -17,5 +18,9 @@ namespace ATS.Models
         public string WebAddress { get; set; }
         public string Address { get; set; }
         public string About { get; set; }
+        public string CreateBy { get; set; }
+        public string ModifiedBy { get; set; }
+        public string CreateDate { get; set; }
+        public string ActionDate { get; set; }
     }
 }
