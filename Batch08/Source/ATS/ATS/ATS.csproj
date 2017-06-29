@@ -213,9 +213,16 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\Catagory.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Menufecturer.cs" />
     <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\ProductCatagory.cs" />
+    <Compile Include="Models\SubCatagory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
