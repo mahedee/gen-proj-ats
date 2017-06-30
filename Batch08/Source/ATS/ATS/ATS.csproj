@@ -213,6 +213,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddNewAsset.cs" />
+    <Compile Include="Models\AssetAssign.cs" />
+    <Compile Include="Models\AssetRegister.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\Department.cs" />
