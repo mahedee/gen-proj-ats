@@ -7,13 +7,13 @@ namespace ATS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class firstmig : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstmig));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706281620111_InitialCreate"; }
+            get { return "201708140937392_firstmig"; }
         }
         
         string IMigrationMetadata.Source

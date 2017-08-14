@@ -10,108 +10,117 @@ using ATS.Models;
 
 namespace ATS.Controllers
 {
-    public class OrganizationsController : Controller
+    public class BranchesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Organizations
+        // GET: Branches
         public ActionResult Index()
         {
-            return View(db.Organizations.ToList());
+            return View(db.Branches.ToList());
         }
 
-        // GET: Organizations/Details/5
+        // GET: Branches/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Organization organization = db.Organizations.Find(id);
-            if (organization == null)
+            Branch branch = db.Branches.Find(id);
+            if (db.Organizations.Find(branch.CompanyId) != null)
+            {
+                branch.CompanyName = db.Organizations.Find(branch.CompanyId).Name;
+            }
+
+            if (branch == null)
             {
                 return HttpNotFound();
             }
-            return View(organization);
+            return View(branch);
         }
 
-        // GET: Organizations/Create
+        // GET: Branches/Create
         public ActionResult Create()
         {
+            ViewBag.CompanyId = new SelectList(db.Organizations, "Id", "Name");
             return View();
         }
 
-        // POST: Organizations/Create
+        // POST: Branches/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Phone,Fax,Email,WebAddress,Address,About,CreateDate,ActionDate")] Organization organization)
+        public ActionResult Create(Branch branch)
         {
+            branch.CreateDate = DateTime.Now;
+            branch.ActionDate = DateTime.Now;
+            
             if (ModelState.IsValid)
             {
-                db.Organizations.Add(organization);
+                db.Branches.Add(branch);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(organization);
+            return View(branch);
         }
 
-        // GET: Organizations/Edit/5
+        // GET: Branches/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Organization organization = db.Organizations.Find(id);
-            if (organization == null)
+            Branch branch = db.Branches.Find(id);
+            if (branch == null)
             {
                 return HttpNotFound();
             }
-            return View(organization);
+            return View(branch);
         }
 
-        // POST: Organizations/Edit/5
+        // POST: Branches/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Organization organization)
+        public ActionResult Edit(Branch branch)
         {
-            organization.ActionDate = DateTime.Now;
+            branch.ActionDate=DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.Entry(organization).State = EntityState.Modified;
+                db.Entry(branch).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(organization);
+            return View(branch);
         }
 
-        // GET: Organizations/Delete/5
+        // GET: Branches/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Organization organization = db.Organizations.Find(id);
-            if (organization == null)
+            Branch branch = db.Branches.Find(id);
+            if (branch == null)
             {
                 return HttpNotFound();
             }
-            return View(organization);
+            return View(branch);
         }
 
-        // POST: Organizations/Delete/5
+        // POST: Branches/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Organization organization = db.Organizations.Find(id);
-            db.Organizations.Remove(organization);
+            Branch branch = db.Branches.Find(id);
+            db.Branches.Remove(branch);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

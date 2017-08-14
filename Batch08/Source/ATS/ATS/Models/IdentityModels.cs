@@ -30,6 +30,7 @@ namespace ATS.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Organization> Organization { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
+        public DbSet<Branch> Branches { get; set; }
     }
 }

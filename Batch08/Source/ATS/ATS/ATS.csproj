@@ -197,19 +197,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706281620111_InitialCreate.cs" />
-    <Compile Include="Migrations\201706281620111_InitialCreate.Designer.cs">
-      <DependentUpon>201706281620111_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706281754063_UserContextss.cs" />
-    <Compile Include="Migrations\201706281754063_UserContextss.Designer.cs">
-      <DependentUpon>201706281754063_UserContextss.cs</DependentUpon>
+    <Compile Include="Migrations\201708140937392_firstmig.cs" />
+    <Compile Include="Migrations\201708140937392_firstmig.Designer.cs">
+      <DependentUpon>201708140937392_firstmig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -230,10 +227,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ATSDB.mdf" />
-    <Content Include="App_Data\ATSDB_log.ldf">
-      <DependentUpon>ATSDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -299,14 +292,11 @@
     <Content Include="Views\Organizations\Details.cshtml" />
     <Content Include="Views\Organizations\Edit.cshtml" />
     <Content Include="Views\Organizations\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706281620111_InitialCreate.resx">
-      <DependentUpon>201706281620111_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706281754063_UserContextss.resx">
-      <DependentUpon>201706281754063_UserContextss.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Branches\Create.cshtml" />
+    <Content Include="Views\Branches\Delete.cshtml" />
+    <Content Include="Views\Branches\Details.cshtml" />
+    <Content Include="Views\Branches\Edit.cshtml" />
+    <Content Include="Views\Branches\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -318,6 +308,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708140937392_firstmig.resx">
+      <DependentUpon>201708140937392_firstmig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

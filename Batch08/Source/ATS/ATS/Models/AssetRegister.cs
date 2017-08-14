@@ -17,7 +17,6 @@ namespace ATS.Models
         public virtual SubCatagory SubCatagory { get; set; }
         public virtual Catagory Catagory { get; set; }
         public virtual Menufecturer Menufecture { get; set; }
-
         public string CreateBy { get; set; }
         public string ModifiedBy { get; set; }
         public string CreateDate { get; set; }

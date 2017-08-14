@@ -3,23 +3,44 @@ namespace ATS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class firstmig : DbMigration
     {
         public override void Up()
         {
             CreateTable(
+                "dbo.Branches",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        CompanyId = c.Int(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 100),
+                        Phone = c.String(),
+                        Fax = c.String(),
+                        Email = c.String(),
+                        Address = c.String(maxLength: 150),
+                        CreateDate = c.DateTime(nullable: false),
+                        ActionDate = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Organizations", t => t.CompanyId, cascadeDelete: true)
+                .Index(t => t.CompanyId);
+            
+            CreateTable(
                 "dbo.Organizations",
                 c => new
                     {
-                        Name = c.String(nullable: false, maxLength: 128),
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 100),
                         Phone = c.String(),
                         Fax = c.String(),
                         Email = c.String(),
                         WebAddress = c.String(),
                         Address = c.String(),
                         About = c.String(),
+                        CreateDate = c.DateTime(nullable: false),
+                        ActionDate = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Name);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -97,18 +118,21 @@ namespace ATS.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Branches", "CompanyId", "dbo.Organizations");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Branches", new[] { "CompanyId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Organizations");
+            DropTable("dbo.Branches");
         }
     }
 }
