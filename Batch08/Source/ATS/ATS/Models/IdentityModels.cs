@@ -32,5 +32,23 @@ namespace ATS.Models
 
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Branch> Branches { get; set; }
+
+        public DbSet<Department> Departments { get; set; }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<Department>()
+                .HasRequired(s => s.Branch)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 }

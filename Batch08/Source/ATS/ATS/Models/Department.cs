@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -12,19 +13,35 @@ namespace ATS.Models
     {
         public Department()
         {
-            
+            CreateDate=DateTime.Now;
+            ActionDate=DateTime.Now;
         }
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Code { get; set; }
+
+        [DisplayName("Company Name")]
+        public int CompanyId { get; set; }
+
+     [ForeignKey("CompanyId")]
+        public virtual Organization Organization { get; set; }
+
+        [DisplayName("Branch")]
         public int BranchId { get; set; }
-        [ForeignKey("BranchId")]
+
+       [ForeignKey("BranchId")]
         public virtual Branch Branch { get; set; }
 
-        public int OrganizationId { get; set; }
-        [ForeignKey("OrganizationId")]
-        public virtual Organization Organization { get; set; }
+        [Required]
+        [DisplayName("Dept Name")]
+        [StringLength(80, MinimumLength = 2)]
+        public string Name { get; set; }
+
+        [Required]
+        [DisplayName("Dept Code")]
+        [StringLength(6, MinimumLength = 2)]
+        public string Code { get; set; }
+        
+
 
        // public string CreateBy { get; set; }
        // public string ModifiedBy { get; set; }

@@ -3,7 +3,7 @@ namespace ATS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class firstmig : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -20,10 +20,11 @@ namespace ATS.Migrations
                         Address = c.String(maxLength: 150),
                         CreateDate = c.DateTime(nullable: false),
                         ActionDate = c.DateTime(nullable: false),
+                        Organization_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Organizations", t => t.CompanyId, cascadeDelete: true)
-                .Index(t => t.CompanyId);
+                .ForeignKey("dbo.Organizations", t => t.Organization_Id)
+                .Index(t => t.Organization_Id);
             
             CreateTable(
                 "dbo.Organizations",
@@ -41,6 +42,25 @@ namespace ATS.Migrations
                         ActionDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Departments",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        CompanyId = c.Int(nullable: false),
+                        BranchId = c.Int(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 80),
+                        Code = c.String(nullable: false, maxLength: 6),
+                        CreateDate = c.DateTime(nullable: false),
+                        ActionDate = c.DateTime(nullable: false),
+                        Organization_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Branches", t => t.BranchId, cascadeDelete: true)
+                .ForeignKey("dbo.Organizations", t => t.Organization_Id)
+                .Index(t => t.BranchId)
+                .Index(t => t.Organization_Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -118,19 +138,24 @@ namespace ATS.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Branches", "CompanyId", "dbo.Organizations");
+            DropForeignKey("dbo.Departments", "Organization_Id", "dbo.Organizations");
+            DropForeignKey("dbo.Departments", "BranchId", "dbo.Branches");
+            DropForeignKey("dbo.Branches", "Organization_Id", "dbo.Organizations");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.Branches", new[] { "CompanyId" });
+            DropIndex("dbo.Departments", new[] { "Organization_Id" });
+            DropIndex("dbo.Departments", new[] { "BranchId" });
+            DropIndex("dbo.Branches", new[] { "Organization_Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Departments");
             DropTable("dbo.Organizations");
             DropTable("dbo.Branches");
         }

@@ -10,6 +10,7 @@ namespace ATS.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "ATS.Models.ApplicationDbContext";
         }
 
         protected override void Seed(ATS.Models.ApplicationDbContext context)
