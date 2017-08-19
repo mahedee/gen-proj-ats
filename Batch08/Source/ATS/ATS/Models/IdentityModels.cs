@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -35,16 +36,20 @@ namespace ATS.Models
 
         public DbSet<Department> Departments { get; set; }
 
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Catagory> Catagories { get; set; }
+        public DbSet<SubCatagory> SubCatagories { get; set; }
+        public DbSet<ProductCatagory> ProductCatagories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
-            modelBuilder.Entity<Department>()
-                .HasRequired(s => s.Branch)
-                .WithMany()
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Department>()
+            //    .HasRequired(s => s.Branch)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
 
 
             base.OnModelCreating(modelBuilder);

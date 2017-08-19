@@ -198,10 +198,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BranchesController.cs" />
+    <Compile Include="Controllers\CatagoriesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
+    <Compile Include="Controllers\ProductCatagoriesController.cs" />
+    <Compile Include="Controllers\SubCatagoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +220,26 @@
     <Compile Include="Migrations\201708182006249_department.cs" />
     <Compile Include="Migrations\201708182006249_department.Designer.cs">
       <DependentUpon>201708182006249_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708191529146_hh.cs" />
+    <Compile Include="Migrations\201708191529146_hh.Designer.cs">
+      <DependentUpon>201708191529146_hh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708191849156_emp.cs" />
+    <Compile Include="Migrations\201708191849156_emp.Designer.cs">
+      <DependentUpon>201708191849156_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708191922215_ctg.cs" />
+    <Compile Include="Migrations\201708191922215_ctg.Designer.cs">
+      <DependentUpon>201708191922215_ctg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708191948405_ctg1.cs" />
+    <Compile Include="Migrations\201708191948405_ctg1.Designer.cs">
+      <DependentUpon>201708191948405_ctg1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708192011042_ppp.cs" />
+    <Compile Include="Migrations\201708192011042_ppp.Designer.cs">
+      <DependentUpon>201708192011042_ppp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -311,6 +335,26 @@
     <Content Include="Views\Departments\Details.cshtml" />
     <Content Include="Views\Departments\Edit.cshtml" />
     <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Catagories\Create.cshtml" />
+    <Content Include="Views\Catagories\Delete.cshtml" />
+    <Content Include="Views\Catagories\Details.cshtml" />
+    <Content Include="Views\Catagories\Edit.cshtml" />
+    <Content Include="Views\Catagories\Index.cshtml" />
+    <Content Include="Views\SubCatagories\Create.cshtml" />
+    <Content Include="Views\SubCatagories\Delete.cshtml" />
+    <Content Include="Views\SubCatagories\Details.cshtml" />
+    <Content Include="Views\SubCatagories\Edit.cshtml" />
+    <Content Include="Views\SubCatagories\Index.cshtml" />
+    <Content Include="Views\ProductCatagories\Create.cshtml" />
+    <Content Include="Views\ProductCatagories\Delete.cshtml" />
+    <Content Include="Views\ProductCatagories\Details.cshtml" />
+    <Content Include="Views\ProductCatagories\Edit.cshtml" />
+    <Content Include="Views\ProductCatagories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -335,6 +379,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708182006249_department.resx">
       <DependentUpon>201708182006249_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708191529146_hh.resx">
+      <DependentUpon>201708191529146_hh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708191849156_emp.resx">
+      <DependentUpon>201708191849156_emp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708191922215_ctg.resx">
+      <DependentUpon>201708191922215_ctg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708191948405_ctg1.resx">
+      <DependentUpon>201708191948405_ctg1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708192011042_ppp.resx">
+      <DependentUpon>201708192011042_ppp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
