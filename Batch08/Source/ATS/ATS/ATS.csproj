@@ -203,6 +203,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenufecturersController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Controllers\ProductCatagoriesController.cs" />
     <Compile Include="Controllers\SubCatagoriesController.cs" />
@@ -240,6 +241,10 @@
     <Compile Include="Migrations\201708192011042_ppp.cs" />
     <Compile Include="Migrations\201708192011042_ppp.Designer.cs">
       <DependentUpon>201708192011042_ppp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708201400203_menu.cs" />
+    <Compile Include="Migrations\201708201400203_menu.Designer.cs">
+      <DependentUpon>201708201400203_menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -355,6 +360,11 @@
     <Content Include="Views\ProductCatagories\Details.cshtml" />
     <Content Include="Views\ProductCatagories\Edit.cshtml" />
     <Content Include="Views\ProductCatagories\Index.cshtml" />
+    <Content Include="Views\Menufecturers\Create.cshtml" />
+    <Content Include="Views\Menufecturers\Delete.cshtml" />
+    <Content Include="Views\Menufecturers\Details.cshtml" />
+    <Content Include="Views\Menufecturers\Edit.cshtml" />
+    <Content Include="Views\Menufecturers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -394,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708192011042_ppp.resx">
       <DependentUpon>201708192011042_ppp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708201400203_menu.resx">
+      <DependentUpon>201708201400203_menu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
