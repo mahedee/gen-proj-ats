@@ -17,7 +17,8 @@ namespace ATS.Controllers
         // GET: Catagories
         public ActionResult Index()
         {
-            return View(db.Catagories.ToList());
+            var catagory = db.Catagory.Include(c => c.CateType);
+            return View(catagory.ToList());
         }
 
         // GET: Catagories/Details/5
@@ -27,7 +28,7 @@ namespace ATS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Catagory catagory = db.Catagories.Find(id);
+            Catagory catagory = db.Catagory.Find(id);
             if (catagory == null)
             {
                 return HttpNotFound();
@@ -38,6 +39,7 @@ namespace ATS.Controllers
         // GET: Catagories/Create
         public ActionResult Create()
         {
+            ViewBag.CateTypeId = new SelectList(db.CateType, "TypeId", "Name");
             return View();
         }
 
@@ -46,17 +48,18 @@ namespace ATS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,CreateDate,ActionDate")] Catagory catagory)
+        public ActionResult Create([Bind(Include = "Id,Name,CateTypeId,CreateDate,ActionDate")] Catagory catagory)
         {
-            catagory.CreateDate = DateTime.Now;
             catagory.ActionDate = DateTime.Now;
+            catagory.CreateDate = DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.Catagories.Add(catagory);
+                db.Catagory.Add(catagory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CateTypeId = new SelectList(db.CateType, "TypeId", "Name", catagory.CateTypeId);
             return View(catagory);
         }
 
@@ -67,11 +70,12 @@ namespace ATS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Catagory catagory = db.Catagories.Find(id);
+            Catagory catagory = db.Catagory.Find(id);
             if (catagory == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.CateTypeId = new SelectList(db.CateType, "TypeId", "Name", catagory.CateTypeId);
             return View(catagory);
         }
 
@@ -80,7 +84,7 @@ namespace ATS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,CreateDate,ActionDate")] Catagory catagory)
+        public ActionResult Edit([Bind(Include = "Id,Name,CateTypeId,CreateDate,ActionDate")] Catagory catagory)
         {
             catagory.ActionDate = DateTime.Now;
             if (ModelState.IsValid)
@@ -89,6 +93,7 @@ namespace ATS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CateTypeId = new SelectList(db.CateType, "TypeId", "Name", catagory.CateTypeId);
             return View(catagory);
         }
 
@@ -99,7 +104,7 @@ namespace ATS.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Catagory catagory = db.Catagories.Find(id);
+            Catagory catagory = db.Catagory.Find(id);
             if (catagory == null)
             {
                 return HttpNotFound();
@@ -112,8 +117,8 @@ namespace ATS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Catagory catagory = db.Catagories.Find(id);
-            db.Catagories.Remove(catagory);
+            Catagory catagory = db.Catagory.Find(id);
+            db.Catagory.Remove(catagory);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

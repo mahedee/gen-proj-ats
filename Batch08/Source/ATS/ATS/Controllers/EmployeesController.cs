@@ -50,7 +50,7 @@ namespace ATS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CompanyId,BranchId,DeptId,Name,Code,CreateDate,ActionDate")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,CompanyId,BranchId,DeptId,Name,Designation,Code,CreateDate,ActionDate")] Employee employee)
         {
             employee.CreateDate = DateTime.Now;
             employee.ActionDate = DateTime.Now;
@@ -90,7 +90,7 @@ namespace ATS.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CompanyId,BranchId,DeptId,Name,Code,CreateDate,ActionDate")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,CompanyId,BranchId,DeptId,Name,Designation,Code,CreateDate,ActionDate")] Employee employee)
         {
             employee.ActionDate = DateTime.Now;
             if (ModelState.IsValid)

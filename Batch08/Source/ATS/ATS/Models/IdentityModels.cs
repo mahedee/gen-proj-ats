@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using ATS.Models;
 
 namespace ATS.Models
 {
@@ -33,15 +34,16 @@ namespace ATS.Models
 
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<Branch> Branches { get; set; }
-
+        public DbSet<Fieldset> Fieldset { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<CateType> CateType { get; set; }
+        public DbSet<Model> Model { get; set; }
 
+        public DbSet<Status> Status { get; set; }
+        
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Catagory> Catagories { get; set; }
-        public DbSet<SubCatagory> SubCatagories { get; set; }
-        public DbSet<ProductCatagory> ProductCatagories { get; set; }
-
-        public DbSet<Menufecturer> Menufecturers { get; set; }
+        public DbSet<Catagory> Catagory { get; set; }
+       public DbSet<Manufacturer> Manufacturers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

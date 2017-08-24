@@ -27,13 +27,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("ATS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Company", "Index", "Organizations")</li>
+                    <li>@Html.ActionLink("Location", "Index", "Branches")</li>
+                    <li>@Html.ActionLink("Department", "Index", "Departments")</li>
+                    <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                    <li>@Html.ActionLink("Catagory", "Index", "Catagories")</li>
+                    <li>@Html.ActionLink("Status Label", "Index", "Status")</li>
+                    <li>@Html.ActionLink("Field Set", "Index", "Fieldsets")</li>
+                    <li>@Html.ActionLink("Type", "Index", "CateTypes")</li>
+                    <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturers")</li>
+                    <li>@Html.ActionLink("Model", "Index", "Model")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

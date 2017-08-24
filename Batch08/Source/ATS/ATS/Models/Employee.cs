@@ -19,7 +19,7 @@ namespace ATS.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [DisplayName("Company Name")]
+        [DisplayName("Company")]
         public int CompanyId { get; set; }
 
         [ForeignKey("CompanyId")]
@@ -37,9 +37,15 @@ namespace ATS.Models
         [ForeignKey("DeptId")]
         public virtual Department Department { get; set; }
 
+       
         [Required]
         [StringLength(80, MinimumLength = 6)]
         public string Name { get; set; }
+
+        [Required]
+        [DisplayName("Designation")]
+        public string Designation { get; set; }
+
 
         [Required]
         [StringLength(4, MinimumLength = 2)]

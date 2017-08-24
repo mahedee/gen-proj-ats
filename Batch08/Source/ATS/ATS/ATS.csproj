@@ -199,68 +199,59 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\CatagoriesController.cs" />
+    <Compile Include="Controllers\CateTypesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\FieldsetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MenufecturersController.cs" />
+    <Compile Include="Controllers\ManufacturersController.cs" />
+    <Compile Include="Controllers\ModelsController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
-    <Compile Include="Controllers\ProductCatagoriesController.cs" />
-    <Compile Include="Controllers\SubCatagoriesController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708181952113_InitialCreate.cs" />
-    <Compile Include="Migrations\201708181952113_InitialCreate.Designer.cs">
-      <DependentUpon>201708181952113_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201708241750278_first.cs" />
+    <Compile Include="Migrations\201708241750278_first.Designer.cs">
+      <DependentUpon>201708241750278_first.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708182001293_model.cs" />
-    <Compile Include="Migrations\201708182001293_model.Designer.cs">
-      <DependentUpon>201708182001293_model.cs</DependentUpon>
+    <Compile Include="Migrations\201708241755052_sec.cs" />
+    <Compile Include="Migrations\201708241755052_sec.Designer.cs">
+      <DependentUpon>201708241755052_sec.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708182006249_department.cs" />
-    <Compile Include="Migrations\201708182006249_department.Designer.cs">
-      <DependentUpon>201708182006249_department.cs</DependentUpon>
+    <Compile Include="Migrations\201708241807491_third.cs" />
+    <Compile Include="Migrations\201708241807491_third.Designer.cs">
+      <DependentUpon>201708241807491_third.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708191529146_hh.cs" />
-    <Compile Include="Migrations\201708191529146_hh.Designer.cs">
-      <DependentUpon>201708191529146_hh.cs</DependentUpon>
+    <Compile Include="Migrations\201708241833085_fourth.cs" />
+    <Compile Include="Migrations\201708241833085_fourth.Designer.cs">
+      <DependentUpon>201708241833085_fourth.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708191849156_emp.cs" />
-    <Compile Include="Migrations\201708191849156_emp.Designer.cs">
-      <DependentUpon>201708191849156_emp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708191922215_ctg.cs" />
-    <Compile Include="Migrations\201708191922215_ctg.Designer.cs">
-      <DependentUpon>201708191922215_ctg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708191948405_ctg1.cs" />
-    <Compile Include="Migrations\201708191948405_ctg1.Designer.cs">
-      <DependentUpon>201708191948405_ctg1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708192011042_ppp.cs" />
-    <Compile Include="Migrations\201708192011042_ppp.Designer.cs">
-      <DependentUpon>201708192011042_ppp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708201400203_menu.cs" />
-    <Compile Include="Migrations\201708201400203_menu.Designer.cs">
-      <DependentUpon>201708201400203_menu.cs</DependentUpon>
+    <Compile Include="Migrations\201708241859454_fifth.cs" />
+    <Compile Include="Migrations\201708241859454_fifth.Designer.cs">
+      <DependentUpon>201708241859454_fifth.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddNewAsset.cs" />
-    <Compile Include="Models\AssetAssign.cs" />
-    <Compile Include="Models\AssetRegister.cs" />
+    <Compile Include="Models\Accessory.cs" />
+    <Compile Include="Models\CateType.cs" />
+    <Compile Include="Models\Component.cs" />
+    <Compile Include="Models\Consumable.cs" />
+    <Compile Include="Models\Fieldset.cs" />
+    <Compile Include="Models\License.cs" />
+    <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Menufecturer.cs" />
+    <Compile Include="Models\Manufacturer.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Organization.cs" />
-    <Compile Include="Models\ProductCatagory.cs" />
-    <Compile Include="Models\SubCatagory.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -290,7 +281,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -345,26 +338,36 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Manufacturers\Create.cshtml" />
+    <Content Include="Views\Manufacturers\Delete.cshtml" />
+    <Content Include="Views\Manufacturers\Details.cshtml" />
+    <Content Include="Views\Manufacturers\Edit.cshtml" />
+    <Content Include="Views\Manufacturers\Index.cshtml" />
+    <Content Include="Views\Fieldsets\Create.cshtml" />
+    <Content Include="Views\Fieldsets\Delete.cshtml" />
+    <Content Include="Views\Fieldsets\Details.cshtml" />
+    <Content Include="Views\Fieldsets\Edit.cshtml" />
+    <Content Include="Views\Fieldsets\Index.cshtml" />
+    <Content Include="Views\CateTypes\Create.cshtml" />
+    <Content Include="Views\CateTypes\Delete.cshtml" />
+    <Content Include="Views\CateTypes\Details.cshtml" />
+    <Content Include="Views\CateTypes\Edit.cshtml" />
+    <Content Include="Views\CateTypes\Index.cshtml" />
     <Content Include="Views\Catagories\Create.cshtml" />
     <Content Include="Views\Catagories\Delete.cshtml" />
     <Content Include="Views\Catagories\Details.cshtml" />
     <Content Include="Views\Catagories\Edit.cshtml" />
     <Content Include="Views\Catagories\Index.cshtml" />
-    <Content Include="Views\SubCatagories\Create.cshtml" />
-    <Content Include="Views\SubCatagories\Delete.cshtml" />
-    <Content Include="Views\SubCatagories\Details.cshtml" />
-    <Content Include="Views\SubCatagories\Edit.cshtml" />
-    <Content Include="Views\SubCatagories\Index.cshtml" />
-    <Content Include="Views\ProductCatagories\Create.cshtml" />
-    <Content Include="Views\ProductCatagories\Delete.cshtml" />
-    <Content Include="Views\ProductCatagories\Details.cshtml" />
-    <Content Include="Views\ProductCatagories\Edit.cshtml" />
-    <Content Include="Views\ProductCatagories\Index.cshtml" />
-    <Content Include="Views\Menufecturers\Create.cshtml" />
-    <Content Include="Views\Menufecturers\Delete.cshtml" />
-    <Content Include="Views\Menufecturers\Details.cshtml" />
-    <Content Include="Views\Menufecturers\Edit.cshtml" />
-    <Content Include="Views\Menufecturers\Index.cshtml" />
+    <Content Include="Views\Status\Create.cshtml" />
+    <Content Include="Views\Status\Delete.cshtml" />
+    <Content Include="Views\Status\Details.cshtml" />
+    <Content Include="Views\Status\Edit.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Models\Create.cshtml" />
+    <Content Include="Views\Models\Delete.cshtml" />
+    <Content Include="Views\Models\Details.cshtml" />
+    <Content Include="Views\Models\Edit.cshtml" />
+    <Content Include="Views\Models\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -381,32 +384,20 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708181952113_InitialCreate.resx">
-      <DependentUpon>201708181952113_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708241750278_first.resx">
+      <DependentUpon>201708241750278_first.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708182001293_model.resx">
-      <DependentUpon>201708182001293_model.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708241755052_sec.resx">
+      <DependentUpon>201708241755052_sec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708182006249_department.resx">
-      <DependentUpon>201708182006249_department.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708241807491_third.resx">
+      <DependentUpon>201708241807491_third.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708191529146_hh.resx">
-      <DependentUpon>201708191529146_hh.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708241833085_fourth.resx">
+      <DependentUpon>201708241833085_fourth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708191849156_emp.resx">
-      <DependentUpon>201708191849156_emp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708191922215_ctg.resx">
-      <DependentUpon>201708191922215_ctg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708191948405_ctg1.resx">
-      <DependentUpon>201708191948405_ctg1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708192011042_ppp.resx">
-      <DependentUpon>201708192011042_ppp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708201400203_menu.resx">
-      <DependentUpon>201708201400203_menu.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708241859454_fifth.resx">
+      <DependentUpon>201708241859454_fifth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
