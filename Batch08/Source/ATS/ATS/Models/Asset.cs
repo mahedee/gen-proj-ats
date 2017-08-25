@@ -53,6 +53,9 @@ namespace ATS.Models
         [ForeignKey("SupplierId")]
         public virtual Supplier Supplier { get; set; }
 
+        [DisplayName("Order Number")]
+        public string OrderNumber { get; set; }
+
         [DisplayName("Purchase Cost")]
         public double Cost { get; set; }
 
@@ -64,12 +67,8 @@ namespace ATS.Models
         [ForeignKey("BranchId")]
         public virtual  Branch Branch { get; set; }
 
-        [DisplayName("Checkout to")]
-        public int EmpId { get; set; }
-        [ForeignKey("EmpId")]
-
-        public virtual  Employee Employee { get; set; }
-
+        [DisplayName("Note")]
+        public string Note { get; set; }
         //public string CreateBy { get; set; }
         // public string ModifiedBy { get; set; }
         public DateTime CreateDate { get; set; }

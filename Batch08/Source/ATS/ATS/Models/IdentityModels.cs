@@ -38,6 +38,9 @@ namespace ATS.Models
         public DbSet<Department> Departments { get; set; }
         public DbSet<CateType> CateType { get; set; }
         public DbSet<Model> Model { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
+
+        public DbSet<Asset> Asset { get; set; }
 
         public DbSet<Status> Status { get; set; }
         
