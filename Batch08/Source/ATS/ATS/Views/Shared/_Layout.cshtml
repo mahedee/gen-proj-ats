@@ -20,62 +20,71 @@
     </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("ATS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("ATS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Create
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Asset", "Create", "Assets")</li>
-                            <li>@Html.ActionLink("License", "Create", "Licenses")</li>
-                            <li>@Html.ActionLink("Accessory", "Create", "Accessories")</li>
-                            <li>@Html.ActionLink("Consumable", "Create", "Consumables")</li>
-                            <li>@Html.ActionLink("Component", "Create", "Components")</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Create
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Asset", "Create", "Assets")</li>
+                        <li>@Html.ActionLink("License", "Create", "Licenses")</li>
+                        <li>@Html.ActionLink("Accessory", "Create", "Accessories")</li>
+                        <li>@Html.ActionLink("Consumable", "Create", "Consumables")</li>
+                        <li>@Html.ActionLink("Component", "Create", "Components")</li>
                          
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
 
-                    <li class="dropdown">
-                        <a href="#"class="dropdown-toggle" data-toggle="dropdown">Admin
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Company", "Index", "Organizations")</li>
-                            <li>@Html.ActionLink("Location", "Index", "Branches")</li>
-                            <li>@Html.ActionLink("Department", "Index", "Departments")</li>
-                            <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
-                            <li>@Html.ActionLink("Catagory", "Index", "Catagories")</li>
-                            <li>@Html.ActionLink("Status Label", "Index", "Status")</li>
-                            <li>@Html.ActionLink("Field Set", "Index", "Fieldsets")</li>
-                            <li>@Html.ActionLink("Type", "Index", "CateTypes")</li>
-                            <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturers")</li>
-                            <li>@Html.ActionLink("Model", "Index", "Model")</li>
-                            <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
-                        </ul>
-                    </li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+                <li class="dropdown">
+                    <a href="#"class="dropdown-toggle" data-toggle="dropdown">Admin
+                        <span class="caret"></span></a>
+
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Company", "Index", "Organizations")</li>
+                        <li>@Html.ActionLink("Location", "Index", "Branches")</li>
+                        <li>@Html.ActionLink("Department", "Index", "Departments")</li>
+                        <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
+                        <li>@Html.ActionLink("Catagory", "Index", "Catagories")</li>
+                        <li>@Html.ActionLink("Status Label", "Index", "Status")</li>
+                        <li>@Html.ActionLink("Field Set", "Index", "Fieldsets")</li>
+                        <li>@Html.ActionLink("Type", "Index", "CateTypes")</li>
+                        <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturers")</li>
+                        <li>@Html.ActionLink("Model", "Index", "Model")</li>
+                        <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
+                    </ul>
+
+                </li>
+            </ul>
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
+</div>
+
+    @*Content Area Here*@
     <div class="container body-content">
         @RenderBody()
         <hr />
+        
+        
+        @*Footer Area Here*@
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
+        
+
     </div>
 
     
