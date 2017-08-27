@@ -11,6 +11,11 @@ namespace ATS.Models
 {
     public class License
     {
+        public License()
+        {
+            CreateDate = DateTime.Now;
+            ActionDate = DateTime.Now;
+        }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -43,6 +48,9 @@ namespace ATS.Models
         [EmailAddress]
         public string LicenseEmail { get; set; }
 
+        [DisplayName("Reassignable")]
+        public bool Reassignable { get; set; }
+
         [DisplayName("Supplier")]
         public int SupplierId { get; set; }
         [ForeignKey("SupplierId")]
@@ -62,6 +70,12 @@ namespace ATS.Models
 
         [DisplayName("Order Number")]
         public string OrderNo { get; set; }
+
+        [DisplayName("Depreciation")]
+        public bool Depreciation { get; set; }
+
+        [DisplayName("Maintained")]
+        public bool Maintained { get; set; }
 
         [DisplayName("Notes")]
         public string Notes { get; set; }

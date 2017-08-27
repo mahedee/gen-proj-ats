@@ -11,7 +11,8 @@ namespace ATS.Models
 {
     public class Accessory
     {
-        [Key]
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [DisplayName("Company")]

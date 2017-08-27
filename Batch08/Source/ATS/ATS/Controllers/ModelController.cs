@@ -11,7 +11,7 @@ using ATS.Models;
 namespace ATS.Controllers
 {
     [RoutePrefix("Model")]
-    public class ModelsController : Controller
+    public class ModelController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

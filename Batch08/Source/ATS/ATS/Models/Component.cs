@@ -11,6 +11,11 @@ namespace ATS.Models
 {
     public class Component
     {
+        public Component()
+        {
+            CreateDate = DateTime.Now;
+            ActionDate = DateTime.Now;
+        }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -34,17 +39,20 @@ namespace ATS.Models
         [ForeignKey("CompanyId")]
         public virtual Organization Organization { get; set; }
 
-        [DisplayName("Branch")]
+        [DisplayName("Location")]
         public int BranchId { get; set; }
 
         [ForeignKey("BranchId")]
         public virtual Branch Branch { get; set; }
 
-        [DisplayName("Purchase Cost")]
-        public double PurchaseCost { get; set; }
+       [DisplayName("Order Number")]
+        public string OrderNumber { get; set; }
 
         [DisplayName("Purchase Date")]
         public DateTime PurchaseDate { get; set; }
+
+        [DisplayName("Purchase Cost")]
+        public double PurchaseCost { get; set; }
 
         // public string CreateBy { get; set; }
         // public string ModifiedBy { get; set; }

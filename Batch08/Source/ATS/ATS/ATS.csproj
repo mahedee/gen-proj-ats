@@ -196,31 +196,43 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccessoriesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AssetsController.cs" />
     <Compile Include="Controllers\BranchesController.cs" />
     <Compile Include="Controllers\CatagoriesController.cs" />
     <Compile Include="Controllers\CateTypesController.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
+    <Compile Include="Controllers\ConsumablesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\FieldsetsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LicensesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManufacturersController.cs" />
-    <Compile Include="Controllers\ModelsController.cs" />
+    <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708251841117_first.cs" />
-    <Compile Include="Migrations\201708251841117_first.Designer.cs">
-      <DependentUpon>201708251841117_first.cs</DependentUpon>
+    <Compile Include="Migrations\201708261854478_License.cs" />
+    <Compile Include="Migrations\201708261854478_License.Designer.cs">
+      <DependentUpon>201708261854478_License.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708251917241_Asset.cs" />
-    <Compile Include="Migrations\201708251917241_Asset.Designer.cs">
-      <DependentUpon>201708251917241_Asset.cs</DependentUpon>
+    <Compile Include="Migrations\201708262016103_Accessories.cs" />
+    <Compile Include="Migrations\201708262016103_Accessories.Designer.cs">
+      <DependentUpon>201708262016103_Accessories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708262047157_Consumables.cs" />
+    <Compile Include="Migrations\201708262047157_Consumables.Designer.cs">
+      <DependentUpon>201708262047157_Consumables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708271914099_Component.cs" />
+    <Compile Include="Migrations\201708271914099_Component.Designer.cs">
+      <DependentUpon>201708271914099_Component.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -447,11 +459,11 @@
     <Content Include="Views\Status\Details.cshtml" />
     <Content Include="Views\Status\Edit.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
-    <Content Include="Views\Models\Create.cshtml" />
-    <Content Include="Views\Models\Delete.cshtml" />
-    <Content Include="Views\Models\Details.cshtml" />
-    <Content Include="Views\Models\Edit.cshtml" />
-    <Content Include="Views\Models\Index.cshtml" />
+    <Content Include="Views\Model\Create.cshtml" />
+    <Content Include="Views\Model\Delete.cshtml" />
+    <Content Include="Views\Model\Details.cshtml" />
+    <Content Include="Views\Model\Edit.cshtml" />
+    <Content Include="Views\Model\Index.cshtml" />
     <Content Include="Views\Suppliers\Create.cshtml" />
     <Content Include="Views\Suppliers\Delete.cshtml" />
     <Content Include="Views\Suppliers\Details.cshtml" />
@@ -462,6 +474,26 @@
     <Content Include="Views\Assets\Details.cshtml" />
     <Content Include="Views\Assets\Edit.cshtml" />
     <Content Include="Views\Assets\Index.cshtml" />
+    <Content Include="Views\Licenses\Create.cshtml" />
+    <Content Include="Views\Licenses\Delete.cshtml" />
+    <Content Include="Views\Licenses\Details.cshtml" />
+    <Content Include="Views\Licenses\Edit.cshtml" />
+    <Content Include="Views\Licenses\Index.cshtml" />
+    <Content Include="Views\Accessories\Create.cshtml" />
+    <Content Include="Views\Accessories\Delete.cshtml" />
+    <Content Include="Views\Accessories\Details.cshtml" />
+    <Content Include="Views\Accessories\Edit.cshtml" />
+    <Content Include="Views\Accessories\Index.cshtml" />
+    <Content Include="Views\Consumables\Create.cshtml" />
+    <Content Include="Views\Consumables\Delete.cshtml" />
+    <Content Include="Views\Consumables\Details.cshtml" />
+    <Content Include="Views\Consumables\Edit.cshtml" />
+    <Content Include="Views\Consumables\Index.cshtml" />
+    <Content Include="Views\Components\Create.cshtml" />
+    <Content Include="Views\Components\Delete.cshtml" />
+    <Content Include="Views\Components\Details.cshtml" />
+    <Content Include="Views\Components\Edit.cshtml" />
+    <Content Include="Views\Components\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -475,11 +507,17 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708251841117_first.resx">
-      <DependentUpon>201708251841117_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708261854478_License.resx">
+      <DependentUpon>201708261854478_License.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708251917241_Asset.resx">
-      <DependentUpon>201708251917241_Asset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708262016103_Accessories.resx">
+      <DependentUpon>201708262016103_Accessories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708262047157_Consumables.resx">
+      <DependentUpon>201708262047157_Consumables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708271914099_Component.resx">
+      <DependentUpon>201708271914099_Component.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

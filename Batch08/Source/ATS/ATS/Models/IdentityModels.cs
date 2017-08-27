@@ -47,6 +47,10 @@ namespace ATS.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Catagory> Catagory { get; set; }
        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<License> License { get; set; }
+        public DbSet<Accessory> Accessory { get; set; }
+        public DbSet<Consumable> Consumable { get; set; }
+        public DbSet<Component> Component { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -7,13 +7,13 @@ namespace ATS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Asset : IMigrationMetadata
+    public sealed partial class Consumables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Asset));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Consumables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708251917241_Asset"; }
+            get { return "201708262047157_Consumables"; }
         }
         
         string IMigrationMetadata.Source

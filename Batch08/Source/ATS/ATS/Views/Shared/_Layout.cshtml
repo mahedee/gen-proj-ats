@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Asset Tracking System</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -40,6 +40,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Asset", "Create", "Assets")</li>
+                            <li>@Html.ActionLink("License", "Create", "Licenses")</li>
+                            <li>@Html.ActionLink("Accessory", "Create", "Accessories")</li>
+                            <li>@Html.ActionLink("Consumable", "Create", "Consumables")</li>
+                            <li>@Html.ActionLink("Component", "Create", "Components")</li>
                          
                         </ul>
                     </li>
@@ -57,7 +61,7 @@
                             <li>@Html.ActionLink("Field Set", "Index", "Fieldsets")</li>
                             <li>@Html.ActionLink("Type", "Index", "CateTypes")</li>
                             <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturers")</li>
-                            <li>@Html.ActionLink("Model", "Index", "Models")</li>
+                            <li>@Html.ActionLink("Model", "Index", "Model")</li>
                             <li>@Html.ActionLink("Supplier", "Index", "Suppliers")</li>
                         </ul>
                     </li>
